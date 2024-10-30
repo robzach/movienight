@@ -5,24 +5,68 @@ marquee{
       behavior: scroll;
       direction: left;
 }
+body{
+	font-size: 5vh;
+}
+
+/* thank you chatgpt for explaining why there was so much weird extra white space */
+h1, h3 {
+      margin: 0; /* Remove extra top and bottom margin */
+}
+
+
 </style>
 
 <title>
 NIGHT OF MOVIES
 </title>
 </head>
+<body>
   
-Who is excited for some
+Who is pumped for some
 
-<marquee scrollamount="50" color="blue"><h1>MOVIES?!</h1></marquee>
+<span><marquee scrollamount="50"><h1>MOVIES!?</h1></marquee></span>
 
-and also some
+on some
 
-<marquee scrollamount="75" color="black"><h1>NIGHTS?!</h1></marquee>
+<span><marquee scrollamount="75"><h1>NIGHTS?!</h1></marquee></span>
 
-
-<em>well here they are</em>
+<center><span><em><h3><u>well here they are, folks:</u></h3></em></span></center>
+<br>
 <br>
 
+<center>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSDOOWcYiBIxHOEGq09MdJz-GluFexnXcgxwyBRUAJp4yjiNH-HxpKv3TBvugw7G66QTNuwT5URqPGs/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="700" height="1200"></iframe></center>
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSDOOWcYiBIxHOEGq09MdJz-GluFexnXcgxwyBRUAJp4yjiNH-HxpKv3TBvugw7G66QTNuwT5URqPGs/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="700" height="1200"></iframe>
+
+<br>
+<div style="font-size: 12pt;">Do you consider yourself <em>very special</em>? If you're right about that, you might be able to add to this list <a href="https://docs.google.com/spreadsheets/d/1GNc-1T1TkeMHSUfQ6F1nv6fIwBQ7k5Mc8Raqhi3RElI/edit?gid=0#gid=0">here</a>.</div>
+
+
+<script>
+
+/* interestingly, you need to put this stuff below the body HTML because otherwise
+the body would load and not pay attention to the script? Weird. */
+
+/* from https://stackoverflow.com/questions/1484506/random-color-generator */
+function get_random_color() {
+  function c() {
+    var hex = Math.floor(Math.random()*256).toString(16);
+    return ("0"+String(hex)).substr(-2); // pad with zero
+  }
+  return "#"+c()+c()+c();
+}
+
+
+
+/* this thing to make the color function above actually work from chatgpt */
+window.onload = function() {
+            let spans = document.querySelectorAll("span");
+            spans.forEach(span => {
+                span.style.color = get_random_color();
+            });
+        };
+
+</script>
+
+</body>
